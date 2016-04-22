@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+<mapper namespace="com.ticket.dao.TicketDao">
+	<!--查询所有的车次信息  -->
+	<select id="findByPage" 
+		parameterType="com.ticket.entity.page.TicketPage"
+		resultType="com.ticket.entity.Ticket">
+				select * from t_ticket 
+				<where>
+					<if test="startpoint!=null and startpoint!=''">
+						 startpoint=#{startpoint}
+					</if>
+					<if test="endpoint!=null and endpoint!=''">
+						and endpoint=#{endpoint} 
+					</if>
+					<if test="startdate!=null">
+						and startdate=#{startdate} 
+					</if>
+					<if test="jounery!=null and jounery!=''">
+						and jounery=#{jounery} 
+					</if>
+				</where>
+				 order by id limit #{currentPage},#{pageSize} 
+	</select>
+     <!--查询总行数  -->
+<select id="findRows" 
+		parameterType="com.ticket.entity.page.TicketPage"
+		resultType="int">
+		select count(*) from t_ticket 
+				<where>
+					<if test="startpoint!=null and startpoint!=''">
+						 startpoint=#{startpoint} 
+					</if>
+					<if test="endpoint!=null and endpoint!=''">
+						and endpoint=#{endpoint}
+					</if>
+					<if test="startdate!=null">
+						and startdate=#{startdate}
+					</if>
+					<if test="jounery!=null and jounery!=''">
+						and jounery=#{jounery}
+					</if>
+			</where>	
+</select>
+<select id="findTrain"
+				resultType="com.ticket.entity.Train">
+			select * from t_train
+</select>
+</mapper>

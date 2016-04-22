@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/ticket/ticket_list.jsp=UTF-8
+encoding//WebRoot/WEB-INF/user/create_user.jsp=UTF-8
+encoding//WebRoot/WEB-INF/user/user.jsp=UTF-8
+encoding//WebRoot/WEB-INF/user/user_info.jsp=UTF-8
+encoding//WebRoot/login.jsp=UTF-8
+encoding//src/com/ticket/controller/AdminController.java=UTF-8
+encoding//src/com/ticket/util/loginServlet.java=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true

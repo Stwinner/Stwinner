@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.ticket.dao.AdminDao">
+ 	<select id="findAdminInfo"
+ 		parameterType="com.ticket.entity.User"
+		resultType="com.ticket.entity.User">
+ 		Select * from t_user 
+ 		<where>
+ 			and  name=#{name}
+ 		</where>
+ 	</select>
+ 	
+ <!-- 	<insert id="saveAdmin" parameterType="com.ticket.entity.User">
+		insert into t_user values(
+			#{name,jdbcType=VARCHAR},
+			#{pwd,jdbcType=VARCHAR},
+			#{brith,jdbcType=TIMESTAMP},
+			#{idcard,jdbcType=VARCHAR},
+			#{address,jdbcType=VARCHAR},
+			#{email,jdbcType=VARCHAR},
+			#{phone,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<select id="findName"  parameterType="String"
+			resultType="com.ticket.entity.User">
+				select * from t_user
+					<where>
+			 			and  name=#{name}
+			 		</where>
+	</select> -->
+<!-- 	<insert id="InsertAdmin"
+		parameterType="com.ticket.entity.User">
+		insert into t_user values(
+			#{name,jdbcType=VARCHAR},
+			#{pwd,jdbcType=VARCHAR},
+			#{TODATE(brith,"yyyy-MM-dd"),jdbcType=DATE},
+			#{idcard,jdbcType=VARCHAR},
+			#{address,jdbcType=VARCHAR},
+			#{email,jdbcType=VARCHAR},
+			#{phone,jdbcType=VARCHAR},
+			#{balance,jdbcType=DOUBLE}	
+		)
+		</insert> -->
+ </mapper>
